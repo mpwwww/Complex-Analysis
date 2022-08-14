@@ -10,8 +10,12 @@
 \usepackage[CJKbookmarks=true, colorlinks=true]{hyperref}
 \newtheorem{question}{问题} % theorem is what you type and Theorem is what to be display
 \newtheorem{prop}{命题}[section]
-\newtheorem{theorem}{定理}[section]
-\newcommand{\q}[1]{\begin{question} #1 \end{question}}
+\newtheorem{Theorem}{定理}[section]
+\newcommand{\q}[1]{\begin{question}
+
+    #1 \end{question}}
+\theoremstyle{definition}
+\newtheorem{Definition}{定义}[section]
 \newcommand{\itg}[2]{\int^{#2}_{#1}}
 \geometry{a4paper,centering,scale=0.8}
 \def\themytheorem{\arabic{mytheorem}}
@@ -32,4 +36,19 @@
 \begin{question} 对于$b^2$, $b\in \mathbb{Z^{+}}$, 找出$c,d\in \mathbb{Z}^{+}$使得 $b^2=c^2+d^2$. 
  \end{question}
 \begin{proof}  \end{proof}
+\section*{球极投影}
+\begin{Definition}{}[扩展复平面] 集合
+    \(\mathbb{C}\cup \{\infty \}\) 称为扩展复平面，记为
+    \(\mathbb{C}_{\infty}\). 对于$z,\in \mathbb{C}_{\infty}$, 定义度量 \(d(z,\infty)=d(\infty,z)=\infty\).  
+\end{Definition}
+从扩展平面到三维球面\(S\)有映射\(f\)定义如下
+\begin{align}
+    f(z)=\bigg(\frac{z+\bar{z}}{|z|^2+1} , \frac{-i(z-\bar{z})}{|z|^2+1}, \frac{|z|^2-1}{|z|^2+1}\bigg)
+\end{align}
+
+我们来证明球极投影是一个连续的双射，并且其逆映射也连续。
+
+\begin{Theorem}{}{  }
+
+\end{Theorem}
 \end{document}
