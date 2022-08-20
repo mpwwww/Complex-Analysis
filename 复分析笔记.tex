@@ -1,4 +1,4 @@
-\documentclass{ctexart}
+\documentclass[font=windows]{ctexart}
  \usepackage{geometry}
 \usepackage{newtxtext}
 \usepackage[dvipsnames,svgnames]{xcolor}
@@ -46,9 +46,32 @@
     f(z)=\bigg(\frac{z+\bar{z}}{|z|^2+1} , \frac{-i(z-\bar{z})}{|z|^2+1}, \frac{|z|^2-1}{|z|^2+1}\bigg)
 \end{align}
 
+
 我们来证明球极投影是一个连续的双射，并且其逆映射也连续。
 
-\begin{Theorem}{}{  }
+\begin{prop}{}
+    \(f^{-1}\colon S\to \mathbb{C}_{\infty}\) 存在，而且对任意\((x_1,x_2,x_3)\in S\), 有\[f^{-1}(x_1,x_2,x_3)=\frac{x_1+ix_2}{1-x_3}\]. 
+\end{prop}
+把\(\mathbb{C}_{\infty}\)看作是\(\mathbb{R^2}_{\infty}\),也可以写 \[ f^{-1}(x_1,x_2,x_3)=\bigl( \frac{x_1}{1-x_3},\frac{x_2}{1-x_3} \bigl). \]
+\begin{prop}\hypertarget{02}{}
+    \(g\colon S\to \mathbb{R}\colon (x_1,x_2,x_3) \mapsto \bigl( \frac{x_1}{1-x_3},\frac{x_2}{1-x_3} \bigl) \) 是连续函数。
+    
+\end{prop}   
+要证明定理 \hyperlink{02}{0.2}，我们有下面更一般的命题。
+\begin{prop}\hypertarget{03}{}
+    函数 \(f\colon Z\to X\times Y\) 连续当，且仅当其分量函数\[f_1\colon Z\to X\] 和 \[f_2\colon Z\to Y\] 都连续。 
+\end{prop}
+忽略对这个一般命题的证明，直接用它来证明
 
-\end{Theorem}
+\begin{proof}
+    对于\(x=(x_1,x_2,x_3)\), 设\(S\to \mathbb{R}\)的函数 \(g_1(x)=\frac{x_1}{1-x_3}\), \(g_2(x)=\frac{x_2}{1-x_3}\). 那么\(f^{-1}(x)=(g_1(x),g_2(x))\).
+    \begin{itemize}
+        \item \(g_1\),\(g_2\)都是连续函数.
+        
+        这是因为
+            \(g_1\)可以分解为 \((x_1,x_2,x_3)\mapsto (x_1,1-x_3) \mapsto \frac{x_1}{1-x_3} \). \(g_2\)类似。
+        \item  由于 \(g_1,g_2\)都连续，所以，根据 \hyperlink{03}{命题0.3} \(f^{-1}\)也连续。
+    \end{itemize}
+\end{proof}
 \end{document}
+
