@@ -1,4 +1,4 @@
-\documentclass[font=windows]{ctexart}
+\documentclass{ctexart}
  \usepackage{geometry}
 \usepackage{newtxtext}
 \usepackage[dvipsnames,svgnames]{xcolor}
@@ -14,11 +14,34 @@
 \newcommand{\q}[1]{\begin{question}
 
     #1 \end{question}}
+\newcommand{\diff}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\twodi}[1]{\frac{\partial^2}{\partial #1^2}}
 \theoremstyle{definition}
 \newtheorem{Definition}{定义}[section]
 \newcommand{\itg}[2]{\int^{#2}_{#1}}
+\newcommand{\grd}{\nabla}
 \geometry{a4paper,centering,scale=0.8}
 \def\themytheorem{\arabic{mytheorem}}
+% characters 
+\newcommand{\der}{\mathrm{der}}
+\newcommand{\ga}{\mathfrak{a}}
+\newcommand{\gb}{\mathfrak{b}}
+\newcommand{\gc}{\mathfrak{c}}
+\newcommand{\gp}{\mathfrak{p}}
+\newcommand{\gm}{\mathfrak{m}}
+\newcommand{\gR}{\mathfrak{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+
+\newcommand{\vocab}[1]{{\color{red}{\textit{#1}}}}
+
 % \tcbset{
 % defstyle/.style={fonttitle=\bfseries\upshape,
 % arc=0mm, colback=yellow!5,
@@ -73,5 +96,10 @@
         \item  由于 \(g_1,g_2\)都连续，所以，根据 \hyperlink{03}{命题0.3} \(f^{-1}\)也连续。
     \end{itemize}
 \end{proof}
+
+\include{The logarithm and inverse functions.tex}
+\include{limits.tex}
+\include{Cauchy Riemann Equation.tex}
+\include{harmonics.tex}
 \end{document}
 
