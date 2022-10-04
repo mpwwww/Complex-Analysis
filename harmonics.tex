@@ -1,0 +1,40 @@
+\section{Harmonics}
+\begin{Definition}
+Harmonics if \(\varphi\) is twice differentiable on \(\R\) with continuous second derivative.
+\end{Definition}
+
+If \(\frac{\partial^2}{\partial^2} \varphi + \frac{\partial^2}{\partial y^2}\varphi =0 \).  Usually written as \(\partial^2 \varphi=0\). 
+
+Examples
+\begin{enumerate}
+\item \(\varphi(x,y)=x^2y^2\). Then \(\twodi{x} \varphi(x)  +\twodi{y} \varphi = 2+(-2)=0.\)
+\item \[\varphi(x,y)=\sin(x)\cosh(y).\] Then \[\diff{ \cos(x)\cosh(y)}{x} \to \sin(x)\cosh(y)\]
+\end{enumerate}
+
+\begin{Theorem}
+Holomorphic implies real and imaginary part harmonic.
+\end{Theorem}
+
+Given that we just need to check that \(u\) and \(v\) satisfies \(\grd^2v=0\) and \(\grd^2v=0\). Since \(u\) and \(v\) are the imaginary part of the holomorphic function, they satisfy the cauchy rieman equation. 
+Use cauhy-riman equation to show \(u\) and \(v\) are harmonic.
+
+\begin{Theorem}[Reconstruction theorem]
+\(R\in \R^2\) open set simply-connected set. \(u\colon R\to R\) a harmonic function. Then there is a harmonic function \(v\colon R\to R\) so that \(f(x+yi)=u(x,y)+iv(x,y)\) is a holomophic function on \(R\). 
+\end{Theorem}
+
+The function \(v\) is called the \vocab{harmonic conjugate } of \(u\) and it is unique up to the addition of a constant function. 
+
+\begin{proof} By the cauchy-riemenn theorem for a function \(f(x+iy)=u(x,y)+iv(x,y)\) to be holomorphic, we need \(u\) and \(v\) to satisfy the cauchy riemann equations. \[\diff{v}{x}=-\diff{u}{y} \] and \[\diff{v}{y}=\diff{u}{x}\]
+\(G\colon R\to \R^2\) be te vector field with component functions \(G_1=\diff{u}{y}\) and \(G_2=\diff{u}{x}\). \(G=(-\diff{u}{y}, \diff{u}{x})\).
+So C-R equation can be written as \(\grd v= (-\frac{\partial u}{\partial y}, \frac{\partial u}{\partial x}) = G\). 
+
+% Since \(Curl (G)= \frac{\partial G_2}{\partial x}-\frac{\partial G_1}{\partial y=\frac{\partial }{\partial x} \frac{\partial u}{\partial y}- \frac{\partial}{\partia x} \frac{\partial u }{\parital y}= -(\frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 v}{\partial x})=0\)
+
+So \(v\) exists. 
+
+To show \(F(x,y)=(u(x,y),v(x,y))\) is differentiable on \(R\) it is enough to show that the first partial derivative is \(u\) and \(v\) exist and are continuous on \(R\). 
+
+Since \(u\) is harmonic, its second derivatives exist, and therefore the first derivative exist and are continuous. But, by the cr equatons, the first derivatives of \(v\) are (up to sign) the first derivative of \(u\). Hence the first derivatives of \(v\) are also continuous. 
+
+THerefore, \(F\) is multivariable differentiable on \(R\) and so by the C-R theorem, \(f\) is holomophic on \(R\).
+\end{proof}
